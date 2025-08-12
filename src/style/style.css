@@ -3,6 +3,7 @@
   --main-bg-color: #141414;
   --main-font-color: #ffffff;
   --secondary-font-color: #808080;
+  --hover-bg-color: #e5e5e5;
 }
 * {
   overflow: hidden;
@@ -50,13 +51,31 @@ body {
   margin-bottom: 3.5rem;
   padding: 0 3rem;
 }
+
 .card__perfil .perfil {
+  padding-top: 1px;
   width: 100%;
   height: auto;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+}
+.card__perfil .perfil:not(.perfil-add):hover {
+  cursor: pointer;
+  div {
+    outline: 1px solid var(--hover-bg-color);
+  }
+  p {
+    color: var(--hover-bg-color);
+  }
+}
+.card__perfil .perfil-add:hover {
+  div i,
+  p {
+    color: var(--hover-bg-color);
+    cursor: pointer;
+  }
 }
 .card__perfil .perfil .avatar {
   width: 84px;
@@ -84,9 +103,17 @@ body {
   background: transparent;
   border: 1px solid var(--secondary-font-color);
   color: var(--secondary-font-color);
+  /* padding-top: 2px; */
+}
+.card__manager:hover {
+  button {
+    border: 1px solid var(--hover-bg-color);
+    color: var(--hover-bg-color);
+    cursor: pointer;
+  }
 }
 
-/* Media Queries */
+/*    Media Queries    */
 @media screen and (min-width: 300px) and (max-width: 413px) {
   .card__perfil .perfil-add {
     grid-column: span 2;
