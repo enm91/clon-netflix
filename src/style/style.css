@@ -32,6 +32,7 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  transform-origin: top center;
 }
 .card .card__title h1 {
   font-size: 3rem;
@@ -71,10 +72,13 @@ body {
   }
 }
 .card__perfil .perfil-add:hover {
-  div i,
+  cursor: pointer;
+  div {
+    background: var(--hover-bg-color);
+    border-radius: 0.4rem;
+  }
   p {
     color: var(--hover-bg-color);
-    cursor: pointer;
   }
 }
 .card__perfil .perfil .avatar {
@@ -84,7 +88,16 @@ body {
   background-position: center;
   background-repeat: no-repeat;
   background-size: contain;
-  border-radius: 0.5rem;
+  border-radius: 0.4rem;
+}
+.card__perfil .perfil .add-avatar {
+  width: 84px;
+  height: 84px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--hover-bg-color);
+  background: transparent;
 }
 .card__perfil .perfil .add-avatar i {
   color: var(--secondary-font-color);
@@ -113,7 +126,8 @@ body {
   }
 }
 
-/*    Media Queries    */
+/*//////////////Media Queries///////////////*/
+
 @media screen and (min-width: 300px) and (max-width: 413px) {
   .card__perfil .perfil-add {
     grid-column: span 2;
@@ -138,10 +152,4 @@ body {
   }
 }
 
-/* desde 866px empieza a hacer todo zoom */
-
-/* @media screen and (min-width: 865px) and (max-width: 1880px) {
-  html {
-    width: 200vmax;
-  }
-} */
+/* si ancho > 865px y ancho < 2000px, escalar progresivamente  */
